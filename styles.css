@@ -1,147 +1,181 @@
 :root {
-  --white: #fdfdfd;
-  --pink-500: #d04560;
-  --gray-250: #333333;
-  --gray-500: #171717;
-  --blue-500: #3050d0;
+	--white: #fdfdfd;
+	--pink-500: #f720c0;
+	--gray-250: #333333;
+	--gray-500: #171717;
+	--blue-500: #3050d0;
+	--green-500: #4ee040;
 }
 
 html {
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 16px;
-  color: #fdfdfd;
-  background-color: var(--gray-500);
+	font-family: "Ubuntu Mono", monospace;
+	font-size: 16px;
+	color: #fdfdfd;
+	background-color: var(--gray-500);
 }
 
 body {
-  line-height: 3rem;
+	line-height: 3rem;
 }
 
 h1,
 p {
-  font-family: "Ubuntu Mono", monospace;
+	font-family: "Ubuntu Mono", monospace;
 }
 
 a {
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.5rem;
-  color: var(--white);
+	text-decoration: none;
+	font-family: "Roboto", sans-serif;
+	font-size: 1.5rem;
+	color: var(--white);
 }
 
 a:hover {
-  color: var(--pink-500);
+	color: var(--green-500);
 }
 
 header {
-  padding: 1rem 6rem;
-  background: var(--gray-250);
+	padding: 1rem 6rem;
+	background: var(--gray-250);
 
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 .logo {
-  font-size: 2rem;
-  font-family: "Shadows Into Light", cursive;
+	font-size: 2rem;
+	font-family: "Antic Didone", serif;
+	font-weight: bold;
 }
 
 .logoAnchor:hover {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .menu {
-  display: flex;
-}
-
-.menuItem {
-  margin: 0 1rem;
-  align-self: flex-end;
+	display: flex;
+	gap: 2rem;
 }
 
 main {
-  background: var(--gray-500);
+	background: var(--gray-500);
 
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-  align-items: center;
+	align-items: center;
 
-  padding: 3rem 6rem;
+	padding: 3rem 6rem;
+	gap: 1rem;
 }
 
 .perfilPhoto {
-  width: 19rem;
-  height: 19rem;
+	width: 19rem;
+	height: 19rem;
 
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 
-  border-radius: 9.5rem;
-  border: 5px solid var(--pink-500);
+	border-radius: 9.5rem;
+	border: 5px solid var(--green-500);
 }
 
 main > p {
-  font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 main > p::before {
-  content: "~$ ";
-  color: var(--pink-500);
+	content: "~$ ";
+	color: var(--pink-500);
 }
 
 .name {
-  color: var(--pink-500);
+	color: var(--green-500);
 }
 
 @keyframes typewriter {
-  from {
-    color: transparent;
-  }
-  to {
-    color: var(--pink-500);
-  }
+	from {
+		color: transparent;
+	}
+	to {
+		color: var(--pink-500);
+	}
 }
 
 .typewriter:after {
-  content: "_";
+	content: "_";
 
-  animation-name: typewriter;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
+	animation-name: typewriter;
+	animation-duration: 700ms;
+	animation-iteration-count: infinite;
 }
 
 .tech {
-  margin-top: 10rem;
-
-  width: 100%;
+	margin-top: 5rem;
+	width: 100%;
 }
 
 h2 {
-  font-size: 2rem;
-  font-family: "Roboto", sans-serif;
+	font-size: 2rem;
+	font-family: "Roboto", sans-serif;
 }
 
 .techList {
-  display: flex;
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	gap: 2rem;
 
-  justify-content: space-between;
+	padding: 0 1rem;
 }
 
 .techItems {
-  font-size: 1.5rem;
-  display: flex;
+	font-size: 1.5rem;
 
-  align-items: center;
+	display: flex;
 
-  margin: 0 1rem;
-}
+	align-items: center;
+	justify-content: flex-start;
 
-.techItems > p::before {
-  content: "--";
-  color: transparent;
+	gap: 2rem;
 }
 
 .techItems > img {
-  width: 2rem;
-  height: 2rem;
+	width: 2rem;
+	height: 2rem;
+}
+
+@media (max-width: 1024px) {
+	.techList {
+		grid-template-columns: 33% 33% 33%;
+	}
+}
+
+@media (max-width: 768px) {
+	.menu {
+		display: none;
+	}
+
+	.techList {
+		grid-template-columns: 50% 50%;
+	}
+}
+
+@media (max-width: 570px) {
+	main {
+		padding: 3rem 2rem;
+	}
+
+	.perfilPhoto {
+		width: 15rem;
+		height: 15rem;
+	}
+
+	.tech {
+		text-align: center;
+
+		gap: 2rem;
+	}
+
+	.techList {
+		grid-template-columns: 100%;
+	}
 }
